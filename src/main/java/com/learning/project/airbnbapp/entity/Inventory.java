@@ -1,9 +1,7 @@
 package com.learning.project.airbnbapp.entity;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,6 +14,9 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(
         uniqueConstraints = @UniqueConstraint(name = "unique_hotel_room_date",
                 columnNames = {"hotel_id", "room_id", "date"}
